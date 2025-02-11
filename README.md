@@ -14,6 +14,29 @@
         <img alt="" src="https://img.shields.io/badge/LinkedIn-0077B5?style=normal&logo=linkedin&logoColor=white" style="vertical-align:center" />
     </a>
 </p>
+## 🔐 Demo Credentials
+
+### Admin Account
+
+```json
+{
+  "email": "admin@gmail.com",
+  "password": "1234",
+  "username": "admin",
+  "role": "Admin (roleId: 1)"
+}
+```
+
+### User Account
+
+```json
+{
+  "email": "dansih@gmail.com",
+  "password": "1234",
+  "username": "Dansih",
+  "role": "User (roleId: 2)"
+}
+```
 
 # 📌 Overview
 
@@ -107,7 +130,7 @@ Job Portal is a modern web application built with React that connects employers 
 
 3. Run the development server
 
-## 👨‍💻 Developer Contact
+## 👨‍�� Developer Contact
 
 Feel free to reach out for any questions or collaboration:
 
