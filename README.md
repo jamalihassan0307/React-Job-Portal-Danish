@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-    <a href="https://jamalihassan0307.github.io/React-Job-Portal-Danish/" target="_blank">
+    <a href="https://react-job-portal-jamalihassan0307.netlify.app/" target="_blank">
         <img alt="" src="https://img.shields.io/badge/Website-EA4C89?style=normal&logo=dribbble&logoColor=white" style="vertical-align:center" />
     </a>
     <a href="https://github.com/jamalihassan0307" target="_blank">
