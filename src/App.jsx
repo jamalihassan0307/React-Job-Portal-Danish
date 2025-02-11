@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Login from "./pages/Login";
 import Jobs from "./pages/Jobs";
@@ -37,39 +32,37 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className={`app-container ${isNavOpen ? "nav-open" : ""}`}>
-        <NavBar
-          onSearch={setSearchTerm}
-          isOpen={isNavOpen}
-          onToggle={() => setIsNavOpen(!isNavOpen)}
+    <div className={`app-container ${isNavOpen ? "nav-open" : ""}`}>
+      <NavBar
+        onSearch={setSearchTerm}
+        isOpen={isNavOpen}
+        onToggle={() => setIsNavOpen(!isNavOpen)}
+      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/jobs"
+          element={
+            <PrivateRoute>
+              <Jobs searchTerm={searchTerm} />
+            </PrivateRoute>
+          }
         />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/jobs"
-            element={
-              <PrivateRoute>
-                <Jobs searchTerm={searchTerm} />
-              </PrivateRoute>
-            }
-          />
-          <Route path="/job/:id" element={<JobDetail />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/add-job"
-            element={
-              <AdminRoute>
-                <AddJob />
-              </AdminRoute>
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+        <Route path="/job/:id" element={<JobDetail />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/add-job"
+          element={
+            <AdminRoute>
+              <AddJob />
+            </AdminRoute>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
