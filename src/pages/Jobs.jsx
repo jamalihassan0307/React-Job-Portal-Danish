@@ -22,7 +22,7 @@ const Jobs = ({ searchTerm }) => {
     type: "",
     salary: "",
   });
-  /*  */
+
   useEffect(() => {
     const userData = localStorage.getItem("user");
     if (!userData) {

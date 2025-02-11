@@ -14,7 +14,7 @@ const Contact = () => {
     // Handle form submission
     console.log("Form submitted:", formData);
   };
-  /*  */
+
   return (
     <div className="contact-page">
       <div className="contact-hero">

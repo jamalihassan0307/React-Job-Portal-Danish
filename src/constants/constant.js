@@ -17,5 +17,3 @@ export const JOB_TYPES = [
   "Freelance",
   "Remote",
 ];
-
-/*  */

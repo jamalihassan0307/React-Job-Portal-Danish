@@ -45,6 +45,8 @@ function App() {
           onToggle={() => setIsNavOpen(!isNavOpen)}
         />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/jobs"
@@ -56,9 +58,7 @@ function App() {
           />
           <Route path="/job/:id" element={<JobDetail />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} />
           <Route
             path="/add-job"
             element={

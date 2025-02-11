@@ -18,7 +18,7 @@ const JobDetail = () => {
     }
     fetchJobDetail();
   }, [id, navigate]);
-  /*  */
+
   const fetchJobDetail = async () => {
     try {
       setLoading(true);

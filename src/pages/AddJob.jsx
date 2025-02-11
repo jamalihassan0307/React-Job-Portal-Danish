@@ -19,7 +19,7 @@ const AddJob = () => {
     },
   });
   const [error, setError] = useState("");
-  /*  */
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user || user.role !== 1) {
