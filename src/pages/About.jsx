@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/pages/About.css';
+import React from "react";
+import "../styles/pages/About.css";
 
 const About = () => {
   return (
@@ -10,13 +10,14 @@ const About = () => {
           <p>Connecting talent with opportunity</p>
         </div>
       </div>
-
+      /* */
       <div className="about-content">
         <div className="about-section">
           <h2>Our Mission</h2>
           <p>
-            At JobPortal, we're dedicated to transforming the way people find their dream careers. 
-            We believe everyone deserves a job they love, and we're here to make that happen.
+            At JobPortal, we're dedicated to transforming the way people find
+            their dream careers. We believe everyone deserves a job they love,
+            and we're here to make that happen.
           </p>
         </div>
 
@@ -60,4 +61,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

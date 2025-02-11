@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/components/JobCard.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/components/JobCard.css";
 
 const JobCard = ({ job }) => {
   const navigate = useNavigate();
@@ -13,24 +13,22 @@ const JobCard = ({ job }) => {
           {job.job_type}
         </span>
       </div>
-      
+      /* */
       <div className="job-card-company">
         <span className="company-name">{job.company}</span>
         <span className="location">📍 {job.location}</span>
       </div>
-      
       <div className="job-card-salary">
         <span>💰 {job.salary}</span>
       </div>
-      
       <div className="job-card-actions">
-        <button 
-          onClick={() => window.open(job.company_url, '_blank')}
+        <button
+          onClick={() => window.open(job.company_url, "_blank")}
           className="company-site-btn"
         >
           Visit Company
         </button>
-        <button 
+        <button
           onClick={() => navigate(`/job/${job.id}`)}
           className="view-details-btn"
         >
@@ -41,4 +39,4 @@ const JobCard = ({ job }) => {
   );
 };
 
-export default JobCard; 
+export default JobCard;

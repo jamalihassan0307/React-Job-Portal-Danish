@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/pages/Home.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/pages/Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -10,13 +10,16 @@ const Home = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1>Find Your Dream Job Today</h1>
-          <p>Discover thousands of job opportunities with all the information you need.</p>
-          <button className="cta-button" onClick={() => navigate('/jobs')}>
+          <p>
+            Discover thousands of job opportunities with all the information you
+            need.
+          </p>
+          <button className="cta-button" onClick={() => navigate("/jobs")}>
             Explore Jobs
           </button>
         </div>
       </div>
-
+      /* */
       <div className="featured-jobs">
         <div className="container">
           <h2>Featured Job Categories</h2>
@@ -36,7 +39,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="features-section ">
         <div className="container">
           <h2>Why Choose Us</h2>
@@ -59,12 +61,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="cta-section">
         <div className="container">
           <h2>Ready to Start Your Career Journey?</h2>
           <p>Join thousands of professionals who've found their dream jobs</p>
-          <button className="cta-button" onClick={() => navigate('/jobs')}>
+          <button className="cta-button" onClick={() => navigate("/jobs")}>
             Search Jobs Now
           </button>
         </div>

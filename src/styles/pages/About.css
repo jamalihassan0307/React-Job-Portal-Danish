@@ -15,12 +15,16 @@
   text-align: center;
   padding: 2rem;
 }
-
+/*  */
 .about-hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -135,4 +139,4 @@
   .about-section h2 {
     font-size: 2rem;
   }
-} 
+}

@@ -4,7 +4,6 @@
 }
 
 .jobs-hero {
- 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -17,12 +16,16 @@
   max-width: 800px;
   margin: 0 auto;
 }
-
+/*  */
 .jobs-hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -76,7 +79,7 @@
 }
 
 .filter-tag:hover {
-  background: #E2E8F0;
+  background: #e2e8f0;
   transform: translateY(-2px);
 }
 
@@ -347,4 +350,4 @@
   padding: 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-} 
+}

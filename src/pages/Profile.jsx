@@ -1,33 +1,33 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/pages/Profile.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/pages/Profile.css";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   const handleLogout = () => {
-    localStorage.removeItem('user');
-    navigate('/login');
+    localStorage.removeItem("user");
+    navigate("/login");
   };
 
   return (
     <div className="profile-page">
       <div className="profile-hero">
         <div className="profile-header">
-          <img 
-            src={user.profile_picture || 'https://via.placeholder.com/150'} 
-            alt="Profile" 
+          <img
+            src={user.profile_picture || "https://via.placeholder.com/150"}
+            alt="Profile"
             className="profile-avatar"
           />
           <h1 className="profile-name">{user.name}</h1>
           <p className="profile-title">Software Developer</p>
         </div>
       </div>
-
+      /* */
       <div className="profile-content">
         <button className="edit-profile-btn">Edit Profile</button>
-        
+
         <div className="profile-grid">
           <div className="profile-sidebar">
             <div className="profile-card">
@@ -72,8 +72,9 @@ const Profile = () => {
                   </div>
                   <h3 className="job-title">Senior Frontend Developer</h3>
                   <p className="experience-description">
-                    Led the development of multiple web applications using React and TypeScript.
-                    Implemented responsive designs and improved application performance.
+                    Led the development of multiple web applications using React
+                    and TypeScript. Implemented responsive designs and improved
+                    application performance.
                   </p>
                 </div>
 
@@ -84,8 +85,8 @@ const Profile = () => {
                   </div>
                   <h3 className="job-title">Frontend Developer</h3>
                   <p className="experience-description">
-                    Developed and maintained client websites. Collaborated with designers
-                    to implement pixel-perfect UI components.
+                    Developed and maintained client websites. Collaborated with
+                    designers to implement pixel-perfect UI components.
                   </p>
                 </div>
               </div>
@@ -115,4 +116,4 @@ const Profile = () => {
   );
 };
 
-export default Profile; 
+export default Profile;

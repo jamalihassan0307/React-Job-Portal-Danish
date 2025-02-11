@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
-import '../styles/components/NavBar.css';
+import React, { useState } from "react";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import "../styles/components/NavBar.css";
 
 const NavBar = ({ onSearch }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleSearch = (e) => {
-    if (location.pathname !== '/jobs') {
-      navigate('/jobs');
+    if (location.pathname !== "/jobs") {
+      navigate("/jobs");
     }
     onSearch(e.target.value);
   };
@@ -25,43 +25,53 @@ const NavBar = ({ onSearch }) => {
           </Link>
         </div>
 
-        <button 
+        <button
           className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}></span>
+          <span
+            className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}
+          ></span>
         </button>
 
-        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+        <div className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
           <div className="nav-links">
-            <Link 
-              to="/" 
-              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            <Link
+              to="/"
+              className={`nav-link ${
+                location.pathname === "/" ? "active" : ""
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="nav-icon">🏠</span>
               <span>Home</span>
             </Link>
-            <Link 
-              to="/jobs" 
-              className={`nav-link ${location.pathname === '/jobs' ? 'active' : ''}`}
+            <Link
+              to="/jobs"
+              className={`nav-link ${
+                location.pathname === "/jobs" ? "active" : ""
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="nav-icon">🔍</span>
               <span>Find Jobs</span>
             </Link>
-            <Link 
-              to="/about" 
-              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+            <Link
+              to="/about"
+              className={`nav-link ${
+                location.pathname === "/about" ? "active" : ""
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="nav-icon">ℹ️</span>
               <span>About</span>
             </Link>
-            <Link 
-              to="/contact" 
-              className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+            <Link
+              to="/contact"
+              className={`nav-link ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="nav-icon">📞</span>
@@ -81,8 +91,8 @@ const NavBar = ({ onSearch }) => {
           <div className="nav-auth">
             {user?.email ? (
               <div className="profile-menu">
-                <img 
-                  src={user.profile_picture || 'https://via.placeholder.com/40'} 
+                <img
+                  src={user.profile_picture || "https://via.placeholder.com/40"}
                   alt="Profile"
                   className="profile-image"
                 />
@@ -92,14 +102,17 @@ const NavBar = ({ onSearch }) => {
                     <span className="profile-email">{user.email}</span>
                   </div>
                   <div className="profile-actions">
-                    <button onClick={() => navigate('/profile')} className="profile-action">
+                    <button
+                      onClick={() => navigate("/profile")}
+                      className="profile-action"
+                    >
                       My Profile
                     </button>
-                    <button 
+                    <button
                       onClick={() => {
-                        localStorage.removeItem('user');
-                        navigate('/login');
-                      }} 
+                        localStorage.removeItem("user");
+                        navigate("/login");
+                      }}
                       className="profile-action logout"
                     >
                       Logout
@@ -119,4 +132,4 @@ const NavBar = ({ onSearch }) => {
   );
 };
 
-export default NavBar; 
+export default NavBar;

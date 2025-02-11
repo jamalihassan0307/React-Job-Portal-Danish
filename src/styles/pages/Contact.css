@@ -14,13 +14,17 @@
   justify-content: center;
   text-align: center;
   padding: 2rem;
-}
+} /*  */
 
 .contact-hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -112,7 +116,11 @@
 .submit-btn {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   border: none;
   border-radius: 8px;
@@ -139,4 +147,4 @@
   .contact-form-container {
     padding: 2rem 1.5rem;
   }
-} 
+}

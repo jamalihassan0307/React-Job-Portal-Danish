@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { BASE_URL, ENDPOINTS } from '../constants/constant';
-import '../styles/pages/JobDetail.css';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL, ENDPOINTS } from "../constants/constant";
+import "../styles/pages/JobDetail.css";
 
 const JobDetail = () => {
   const [job, setJob] = useState(null);
@@ -11,27 +11,27 @@ const JobDetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem("user");
     if (!user) {
-      navigate('/login');
+      navigate("/login");
       return;
     }
     fetchJobDetail();
   }, [id, navigate]);
-
+  /*  */
   const fetchJobDetail = async () => {
     try {
       setLoading(true);
       const response = await axios.get(`${BASE_URL}${ENDPOINTS.JOBS}`);
       const jobs = response.data;
-      const selectedJob = jobs.find(job => job.id === parseInt(id));
+      const selectedJob = jobs.find((job) => job.id === parseInt(id));
       if (selectedJob) {
         setJob(selectedJob);
       } else {
-        navigate('/jobs');
+        navigate("/jobs");
       }
     } catch (error) {
-      console.error('Error fetching job details:', error);
+      console.error("Error fetching job details:", error);
     } finally {
       setLoading(false);
     }
@@ -109,17 +109,17 @@ const JobDetail = () => {
 
           <div className="action-buttons">
             {job.company_url && (
-              <a 
-                href={job.company_url} 
-                target="_blank" 
+              <a
+                href={job.company_url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="action-button primary"
               >
                 Visit Company Website
               </a>
             )}
-            <button 
-              onClick={() => navigate('/jobs')} 
+            <button
+              onClick={() => navigate("/jobs")}
               className="action-button secondary"
             >
               Back to Jobs
@@ -131,4 +131,4 @@ const JobDetail = () => {
   );
 };
 
-export default JobDetail; 
+export default JobDetail;

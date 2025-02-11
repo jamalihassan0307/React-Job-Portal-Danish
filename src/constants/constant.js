@@ -10,11 +10,12 @@ export const ENDPOINTS = {
 };
 
 export const JOB_TYPES = [
-  'All',
-  'Full-time',
-  'Part-time',
-  'Contract', 
-  'Freelance',
-  'Remote'
+  "All",
+  "Full-time",
+  "Part-time",
+  "Contract",
+  "Freelance",
+  "Remote",
 ];
 
+/*  */

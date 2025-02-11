@@ -1,48 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { BASE_URL, ENDPOINTS, JOB_TYPES } from '../constants/constant';
-import '../styles/pages/Jobs.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL, ENDPOINTS, JOB_TYPES } from "../constants/constant";
+import "../styles/pages/Jobs.css";
 
 const AddJob = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    job_title: '',
-    company: '',
-    company_url: '',
-    location: '',
-    salary: '',
-    job_type: '',
+    job_title: "",
+    company: "",
+    company_url: "",
+    location: "",
+    salary: "",
+    job_type: "",
     contact_details: {
-      email: '',
-      phone: ''
-    }
+      email: "",
+      phone: "",
+    },
   });
-  const [error, setError] = useState('');
-
+  const [error, setError] = useState("");
+  /*  */
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem("user"));
     if (!user || user.role !== 1) {
-      navigate('/');
+      navigate("/");
     }
   }, [navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name.includes('contact_')) {
+    if (name.includes("contact_")) {
       // Handle contact details fields
-      const field = name.replace('contact_', '');
-      setFormData(prev => ({
+      const field = name.replace("contact_", "");
+      setFormData((prev) => ({
         ...prev,
         contact_details: {
           ...prev.contact_details,
-          [field]: value
-        }
+          [field]: value,
+        },
       }));
     } else {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        [name]: value
+        [name]: value,
       }));
     }
   };
@@ -51,9 +51,9 @@ const AddJob = () => {
     e.preventDefault();
     try {
       await axios.post(`${BASE_URL}${ENDPOINTS.addjobs}`, formData);
-      navigate('/jobs');
+      navigate("/jobs");
     } catch (err) {
-      setError('Error adding job');
+      setError("Error adding job");
     }
   };
 
@@ -116,8 +116,10 @@ const AddJob = () => {
             required
           >
             <option value="">Select Type</option>
-            {JOB_TYPES.filter(type => type !== 'All').map(type => (
-              <option key={type} value={type}>{type}</option>
+            {JOB_TYPES.filter((type) => type !== "All").map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
           </select>
         </div>
@@ -158,10 +160,10 @@ const AddJob = () => {
         </div>
 
         <div className="form-actions">
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="cancel-btn"
-            onClick={() => navigate('/jobs')}
+            onClick={() => navigate("/jobs")}
           >
             Cancel
           </button>
@@ -174,4 +176,4 @@ const AddJob = () => {
   );
 };
 
-export default AddJob; 
+export default AddJob;

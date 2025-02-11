@@ -15,13 +15,17 @@
 .job-detail-hero-content {
   max-width: 1200px;
   margin: 0 auto;
-}
+} /*  */
 
 .job-detail-hero-content h1 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -52,17 +56,17 @@
 
 .job-type.full-time {
   background: rgba(16, 185, 129, 0.1);
-  color: #10B981;
+  color: #10b981;
 }
 
 .job-type.part-time {
   background: rgba(59, 130, 246, 0.1);
-  color: #3B82F6;
+  color: #3b82f6;
 }
 
 .job-type.contract {
   background: rgba(245, 158, 11, 0.1);
-  color: #F59E0B;
+  color: #f59e0b;
 }
 
 .job-detail-content {
@@ -102,7 +106,7 @@
 }
 
 .info-section li::before {
-  content: '•';
+  content: "•";
   color: var(--primary-color);
 }
 
@@ -142,7 +146,11 @@
 }
 
 .action-button.primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
 }
 
@@ -171,4 +179,4 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
-} 
+}
