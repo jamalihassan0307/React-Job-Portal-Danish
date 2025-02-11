@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/React-Job-Portal-Danish/",
   plugins: [react()],
   server: {
     port: 3000,
@@ -14,5 +13,11 @@ export default defineConfig({
         rewrite: (Path) => Path.replace(/^\/api/, ""),
       },
     },
+  },
+  // Remove the base path since we're not using GitHub Pages anymore
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    emptyOutDir: true,
   },
 });
